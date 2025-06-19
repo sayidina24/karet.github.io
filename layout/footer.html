@@ -1,0 +1,90 @@
+<hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0)); margin: 40px 0 0 0;">
+
+<footer style="background-color: #336699; color: #ecf0f1; text-align: center; padding: 30px 20px; font-family: Arial, sans-serif; border-top: 5px solid #3498db;">
+    <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px; text-align: left;">
+
+        <div style="flex: 1; min-width: 280px;">
+            <h4 style="color: #ecf0f1; margin-bottom: 15px; font-size: 1.2em; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 8px;">Informasi Perusahaan</h4>
+            <p style="font-size: 0.9em; margin-bottom: 10px;">
+                <strong style="color: #ffffff;">Alamat:</strong> [Jl. Karangrejo Sawah Ⅳ No.9, RT.005/RW.03, Wonokromo, Kec. Wonokromo, Surabaya, Jawa Timur 60243]<br>
+                <strong style="color: #ffffff;">Telepon:</strong> <a href="tel:https://wa.me/6285888842655?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20NORMEX%20NM-82%20Anda." style="color: #f8fafb; text-decoration: none;">+6285888842655</a><br>
+                <strong style="color: #ffffff;">Email:</strong> <a href="mailto:karet.idn@gmail.com" style="color: #edf0f2; text-decoration: none;">karet.idn@gmail.com</a>
+            </p>
+            <div style="margin-top: 20px; text-align: left;">
+                <a href="https://www.facebook.com/share/1E1dfXgo4T/" style="color: #3498db; text-decoration: none; margin-right: 15px;">Facebook</a> |
+                <a href="https://www.instagram.com/karet.idn?igsh=Zzk2NWozbTJyZ2Mw" style="color: #3498db; text-decoration: none; margin-right: 15px;">Instagram</a> |
+                <a href="https://wa.me/6285888842655?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20NORMEX%20NM-82%20Anda." style="color: #3498db; text-decoration: none; margin-right: 15px;" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+
+        <div style="flex: 1; min-width: 280px;">
+            <h4 style="color: #ecf0f1; margin-bottom: 15px; font-size: 1.2em; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 8px;">Temukan Kami di Peta</h4>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3957.424091088227!2d112.7327506!3d-7.30616!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbcd8beaff97%3A0x16d95df1ff9200b0!2sKaret.idn!5e0!3m2!1sen!2sid!4v1748536148212!5m2!1sen!2sid"
+                width="100%"
+                height="200"
+                style="border:0; border-radius: 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <p style="font-size: 0.75em; color: #bdc3c7; margin-top: 10px; text-align: center;"></p>
+        </div>
+
+        <div style="width: 100%; text-align: center; margin-top: 30px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9em;">
+            <p style="margin: 0;">© <?php echo date("Y"); ?> Umar dan Padel. Semua Hak Dilindungi.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Kontrol maju/mundur
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Kontrol gambar thumbnail (titik navigasi)
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+// Otomatis ganti slide setiap beberapa detik
+let autoSlideInterval = setInterval(function() {
+  plusSlides(1);
+}, 5000); // Ganti gambar setiap 5 detik (5000 milidetik)
+
+// Hentikan otomatis saat mouse di atas slideshow
+const slideshowContainer = document.querySelector('.slideshow-container');
+slideshowContainer.addEventListener('mouseenter', () => {
+    clearInterval(autoSlideInterval);
+});
+
+// Lanjutkan otomatis saat mouse keluar dari slideshow
+slideshowContainer.addEventListener('mouseleave', () => {
+    autoSlideInterval = setInterval(function() {
+        plusSlides(1);
+    }, 5000);
+});
+</script>
+
+</body>
+</html>

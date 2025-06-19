@@ -1,0 +1,416 @@
+/* Styling Umum untuk Body */
+body {
+    font-family: Arial, sans-serif; /* Menggunakan Arial sebagai font default */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #E0F2F7; /* Mengambil warna background dari input Anda */
+    color: #333; /* Warna teks default body */
+}
+
+/* Styling untuk Header */
+header {
+    background-color: #e2e6eb; /* Warna background dari input Anda */
+    color: #FFFFFF; /* Warna teks di header */
+    padding: 10px 0; /* Padding vertikal untuk header */
+    display: flex; /* Menggunakan flexbox untuk memusatkan konten header */
+    flex-direction: column; /* Mengatur konten header (logo dan nav) dalam kolom */
+    align-items: center; /* Memusatkan item secara horizontal (logo dan nav) */
+    justify-content: center; /* Memusatkan item secara vertikal jika ada ruang */
+}
+
+/* Kontainer utama untuk logo dan navigasi di dalam header */
+.header-content {
+    display: flex;
+    flex-direction: column; /* Mengatur logo dan navigasi dalam kolom */
+    align-items: center; /* Memusatkan logo dan navigasi */
+    width: 100%; /* Memastikan konten header mengambil seluruh lebar */
+    max-width: 1200px; /* Batasi lebar maksimum header agar tidak terlalu lebar di layar besar */
+}
+
+/* Kontainer untuk logo */
+.logo-container {
+    margin-bottom: 10px; /* Jarak antara logo dan navigasi di bawahnya */
+    padding-top: 5px; /* Padding di atas logo */
+    text-align: center; /* Pastikan gambar di dalamnya terpusat */
+}
+
+/* Styling untuk Gambar Logo */
+.logo-container img.logo {
+    height: auto; /* Mempertahankan rasio aspek */
+    max-width: 250px; /* Atur ukuran maksimum logo. Sesuaikan ini untuk memperbesar/memperkecil. */
+    width: 100%; /* Agar responsif, logo mengambil 100% dari lebar kontainernya (hingga max-width) */
+    display: block; /* Penting untuk pemusatan dengan margin: auto; */
+    margin: 0 auto; /* Memusatkan gambar logo */
+}
+
+/* Styling untuk Navigasi (BERANDA, PRODUK KAMI, dll.) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Menggunakan flexbox untuk membuat menu horizontal */
+    justify-content: center; /* Memusatkan item menu secara horizontal */
+    flex-wrap: wrap; /* Izinkan item menu untuk wrap ke baris berikutnya jika ruang tidak cukup */
+    gap: 10px; /* Jarak antar item menu */
+}
+
+nav ul li {
+    margin: 0; /* Menghapus margin default list item */
+}
+
+nav ul li a {
+    display: inline-block; /* Agar padding dan border bekerja dengan baik */
+    padding: 8px 15px;
+    background-color: #d9e3e7; /* Warna background tombol default */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: sans-serif;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Warna border spesifik untuk setiap item menu */
+nav ul li:nth-child(1) a { border: 1px solid #4cae4c; } /* Beranda */
+nav ul li:nth-child(2) a { border: 1px solid #eea236; } /* Produk Kami */
+nav ul li:nth-child(3) a { border: 1px solid #46b8da; } /* Profil Perusahaan */
+nav ul li:nth-child(4) a { border: 1px solid #46b8da; } /* Artikel */
+
+nav ul li a:hover {
+    background-color: #337ab7; /* Warna hover yang lebih gelap */
+    border-color: #2e6da4;
+}
+
+/* Styling untuk Main Content */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    max-width: 800px; /* Atur lebar maksimum slideshow sesuai kebutuhan Anda */
+    position: relative;
+    margin: auto;
+    border-radius: 8px; /* Border-radius dari input Anda */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Box-shadow dari input Anda */
+    overflow: hidden; /* Penting untuk memastikan border-radius diterapkan pada gambar */
+}
+
+/* Sembunyikan gambar secara default */
+.mySlides {
+    display: none;
+}
+
+/* Gambar di dalam slide */
+.mySlides img {
+    vertical-align: middle;
+    width: 100%; /* Pastikan gambar mengambil 100% lebar kontainernya */
+    height: auto; /* Jaga rasio aspek */
+}
+
+/* Tombol Maju & Mundur */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5); /* Latar belakang tombol */
+}
+
+/* Posisikan tombol "next" ke kanan */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Saat di-hover, tambahkan latar belakang hitam yang lebih gelap */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Titik-titik navigasi (dots) */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Titik yang aktif dan saat di-hover */
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Animasi pudar */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Jika Anda menambahkan teks di bawah gambar slideshow */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4); /* Latar belakang untuk teks */
+}
+
+/* CSS untuk ikon WhatsApp Anda */
+.whatsapp-float {
+    position: fixed; /* Membuat elemen tetap di layar saat di-scroll */
+}
+
+.whatsapp-float img {
+    width: 60px; /* Ukuran icon WhatsApp */
+    height: auto;
+    display: block;
+    border-radius: 50%; /* Membuat lingkaran */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Sedikit bayangan */
+    transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float img:hover {
+    transform: scale(1.1); /* Efek zoom saat di-hover */
+}
+
+
+/* Styling untuk ulasan Shopee dan Tokopedia (dari sebelumnya) */
+.ulasan-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.ulasan-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex: 1 1 calc(50% - 30px);
+    max-width: calc(50% - 30px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.ulasan-item h4 {
+    color: #336699;
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+.ulasan-item p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.ulasan-item a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #336699;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.ulasan-item a:hover {
+    background-color: #2a527c;
+}
+
+/* Styling untuk Judul Produk di produk.php */
+.product-category-title {
+    color: #0055AA;
+    text-align: center;
+    font-family: serif;
+    border-bottom: 1px solid #0055AA;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk tabel produk di produk.php */
+.product-table-container {
+    overflow-x: auto;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table td {
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+    background-color: #F9F9F9;
+    vertical-align: top;
+    text-align: center;
+}
+
+.product-table td img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #BBBBBB;
+    padding: 3px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.product-table td h4 {
+    color: #336699;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.product-table td p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.product-table .whatsapp-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #1DA851;
+    border-radius: 4px;
+    font-family: sans-serif;
+    font-size: 0.85em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.product-table .whatsapp-button:hover {
+    background-color: #1DA851;
+}
+
+/* Media Queries Responsif */
+@media screen and (max-width: 768px) {
+    /* Penyesuaian logo pada layar tablet */
+    .logo-container img.logo {
+        max-width: 200px; /* Ukuran logo lebih kecil di tablet */
+    }
+
+    /* Penyesuaian navigasi untuk layar kecil (menu menjadi kolom) */
+    nav ul {
+        flex-direction: column; /* Mengubah menu kembali menjadi kolom */
+        align-items: center; /* Pusatkan item menu */
+    }
+
+    nav ul li a {
+        padding: 10px 15px; /* Kurangi padding pada item menu */
+    }
+
+    /* Slideshow di tablet */
+    .slideshow-container {
+        max-width: 90%; /* Menggunakan persentase agar lebih responsif */
+    }
+    .mySlides img {
+        height: auto; /* Biarkan tinggi menyesuaikan otomatis untuk responsivitas */
+    }
+    .prev, .next {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .dot {
+        height: 12px;
+        width: 12px;
+    }
+
+    /* Mengatur ulasan agar menjadi satu kolom di layar kecil */
+    .ulasan-container > div {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Penyesuaian footer untuk layar kecil */
+    footer > div {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Penyesuaian logo pada layar sangat kecil (mobile) */
+    .logo-container img.logo {
+        max-width: 180px; /* Ukuran logo lebih kecil di mobile */
+    }
+    main {
+        padding: 10px;
+        margin: 10px auto;
+    }
+    .slideshow-container {
+        border-radius: 0; /* Hilangkan border-radius di mobile jika diinginkan */
+        box-shadow: none; /* Hilangkan shadow slideshow di mobile jika diinginkan */
+    }
+    .prev, .next {
+        font-size: 12px;
+        padding: 8px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+    /* Responsivitas tabel produk di produk.php */
+    .product-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Memungkinkan scroll horizontal jika tabel terlalu lebar */
+        -webkit-overflow-scrolling: touch;
+    }
+    .product-table tr, .product-table td {
+        display: block; /* Membuat baris dan sel tabel menjadi blok */
+        width: 100%;
+    }
+    .product-table td {
+        border: none;
+        padding: 8px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .product-table td img {
+        max-width: 100%;
+        height: auto;
+    }
+    .whatsapp-float img {
+        width: 50px; /* Ukuran icon WhatsApp lebih kecil di mobile */
+    }
+}
